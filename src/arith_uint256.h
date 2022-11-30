@@ -166,6 +166,7 @@ public:
     {
         // prefix operator
         int i = 0;
+        // notes(simon): ++pin[i] 的判断进位处理很巧妙
         while (i < WIDTH && ++pn[i] == 0)
             i++;
         return *this;
@@ -249,6 +250,7 @@ public:
     arith_uint256(uint64_t b) : base_uint<256>(b) {}
     explicit arith_uint256(const std::string& str) : base_uint<256>(str) {}
 
+// notes(simon: compact 格式定义
     /**
      * The "compact" format is a representation of a whole
      * number N using an unsigned 32bit number similar to a
